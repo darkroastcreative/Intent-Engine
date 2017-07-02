@@ -1,5 +1,5 @@
 # Intent Engine
-intentEngine.js determines a user’s intent when browsing pages of a website or Web app, and allows the product to respond accordingly.
+The Intent Engine provides a framework for developers to easily determine and act on user intents within websites and apps.
 
 ## Installation
 To install the intent engine, simply include it in a directory where your website or application can access the file.
