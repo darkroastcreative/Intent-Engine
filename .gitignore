@@ -1,0 +1,5 @@
+# Demo Directory (Used for Internal Testing)
+demo/
+
+# macOS System Files
+.DS_Store
