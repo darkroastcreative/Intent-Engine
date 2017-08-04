@@ -24,7 +24,7 @@ class IntentEngine {
       args = location.search.substr(1).split(/&/);
     for (var i = 0; i < args.length; ++i) {
       var tmp = args[i].split(/=/);
-      if (tmp[0] != "") {
+      if (tmp[0] !== "") {
         $_GET[decodeURIComponent(tmp[0])] = decodeURIComponent(tmp.slice(1).join("").replace("+", " "));
       }
     }
@@ -45,8 +45,8 @@ class IntentEngine {
     var pages = [];
 
     // Detect pages and add their names to the array
-    $.each($('.page'), function(i) {
-      pages.push($(this).attr('id'));
+    $.each($(".page"), function(i) {
+      pages.push($(this).attr("id"));
     });
 
     // Set gotPages to true
@@ -83,26 +83,23 @@ class IntentEngine {
     if (this.nullIntent) {
       this.intent = this.getIntent();
     }
-    console.log("Intent: " + this.intent);
-    if(!this.gotPages)
     if (transitionTime == null) {
       transitionTime = 350;
     }
 
     // Hide all pages
-    $.each($('.page'), function(i) {
+    $.each($(".page"), function(i) {
       $(this).hide();
     });
 
     // Show the content associated with the current intent
     if(!this.nullIntent) {
       if (this.hasPage(this.intent)) {
-        console.log("Has page");
-        $('#' + this.intent).show(transitionTime);
+        $("#" + this.intent).show(transitionTime);
         return;
       }
     }
-    $('#default').show(transitionTime);
+    $("#default").show(transitionTime);
 
   }
 
