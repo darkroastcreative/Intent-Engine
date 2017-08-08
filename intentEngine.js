@@ -80,9 +80,6 @@ class IntentEngine {
 
   showIntentContent(transitionTime) {
     // check for the presence of parameters in the function call and act accordingly
-    if (this.nullIntent) {
-      this.intent = this.getIntent();
-    }
     if (transitionTime == null) {
       transitionTime = 350;
     }
@@ -93,11 +90,9 @@ class IntentEngine {
     });
 
     // Show the content associated with the current intent
-    if(!this.nullIntent) {
-      if (this.hasPage(this.intent)) {
-        $("#" + this.intent).show(transitionTime);
-        return;
-      }
+    if(!this.nullIntent && this.hasPage(this.intent)) {
+      $("#" + this.intent).show(transitionTime);
+      return;
     }
     $("#default").show(transitionTime);
 
