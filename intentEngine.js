@@ -71,8 +71,8 @@ class IntentEngine {
       }
     }
     else {
-      getPages();
-      hasPage(pageName);
+      this.getPages();
+      this.hasPage(pageName);
     }
     return false;
 
