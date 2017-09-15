@@ -2,6 +2,11 @@
 Intent Engine provides a framework for developers to easily determine and act on user intents within websites and apps.
 [![codebeat badge](https://codebeat.co/badges/16a370d8-8478-4470-baef-0778416c99f5)](https://codebeat.co/projects/github-com-darkroastcreative-intent-engine-master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0ac118a4a49246b7bb28d0bf1cc3e335)](https://www.codacy.com/app/darkroastcreative/Intent-Engine?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=darkroastcreative/Intent-Engine&amp;utm_campaign=Badge_Grade)
 
+
+[![Buy Me A Coffee](http://darkroastcreative.co/wp-content/uploads/2017/09/DRC_Buy-Me-A-Coffee_Button.png)](https://ko-fi.com/A1263BPJ)
+
+Like Intent Engine? [Buy me a coffee (or two, I’ll drink them both).](https://ko-fi.com/A1263BPJ)
+
 ## Installation
 To install the intent engine, simply include it in a directory where your website or application can access the file, and link the script in your site or application's files.
 
