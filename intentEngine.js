@@ -1,5 +1,6 @@
 /*
 intentEngine.js
+v1.1.0
 David Fink
 @darkroastcreate
 david@darkroastcreative.co
@@ -17,6 +18,15 @@ class IntentEngine {
     var hasPages = false;
   }
 
+  setIntent(intent) {
+    this.intent = intent;
+    if (this.intent != null) {
+      this.nullIntent = false;
+      return this.intent;
+    }
+    this.nullIntent = true;
+  }
+
   getIntent() {
 
     // Get query arguments from URI
@@ -30,12 +40,7 @@ class IntentEngine {
     }
 
     // Assign intent property to the intent variable and set nullIntent variable accordingly
-    this.intent = $_GET.intent;
-    if (this.intent != null) {
-      this.nullIntent = false;
-      return this.intent;
-    }
-    this.nullIntent = true;
+    setIntent($_GET.intent);
     return this.intent;
   }
 
