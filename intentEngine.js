@@ -1,6 +1,6 @@
 /*
 intentEngine.js
-v1.1.0
+v1.1.1
 David Fink
 @darkroastcreate
 david@darkroastcreative.co
@@ -40,7 +40,7 @@ class IntentEngine {
     }
 
     // Assign intent property to the intent variable and set nullIntent variable accordingly
-    setIntent($_GET.intent);
+    this.setIntent($_GET.intent);
     return this.intent;
   }
 
