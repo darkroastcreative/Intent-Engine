@@ -1,5 +1,6 @@
 # Intent Engine
 Intent Engine provides a framework for developers to easily determine and act on user intents within websites and apps.
+
 [![codebeat badge](https://codebeat.co/badges/16a370d8-8478-4470-baef-0778416c99f5)](https://codebeat.co/projects/github-com-darkroastcreative-intent-engine-master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0ac118a4a49246b7bb28d0bf1cc3e335)](https://www.codacy.com/app/darkroastcreative/Intent-Engine?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=darkroastcreative/Intent-Engine&amp;utm_campaign=Badge_Grade)
 
 
@@ -45,6 +46,9 @@ else	{
 ```
 
 ## Functions
+### setIntent(intent)
+`setIntent()` allows the user's intent to be set directly within Intent Engine by passing in a String as the `intent` parameter. The engine's internal `intent` variable will be set to this parameter, though Intent Engine will not act on this new intent.
+
 ### getIntent()
 `getIntent()` attempts to retrieve the intent of a user by checking for the `intent` query component in a URI, and if there is a value set for this component. The engine's internal `intent` variable will be set to the value (which may be null), and the internal `nullIntent` variable will be set to reflect whether or not the intent is null. In addition, the function will return the detected intent.
 
@@ -54,5 +58,8 @@ For projects utilizing the Intent Engine page structure, the `getPages()` functi
 ### hasPage(pageName)
 For projects utilizing the Intent Engine page structure, `hasPage()` accepts a page name as a String, and returns a boolean value indicating whether or not the page exists.
 
-## showIntentContent(intent, transitionTime)
+### showIntentContent(transitionTime)
 For projects utilizing the Intent Engine page structure, `showIntentContent()` shows the page associated with the intent, and hides any other page that was visible to the user. The function accepts a String representing the current intent and a transition time for displaying the desired page (in milliseconds).
+
+### actOnIntent(intent, transitionTime)
+The `actOnIntent()` function combines the actions of the `setIntent()` and `showIntentContent()` functions. This function accepts two String parameters, `intent` and `transitionTime`, which represent the intent which should be set and the transition time (in milliseconds) for acting on this new intent. While the `intent` parameter is required, it is not necessary to pass in a transition time, though a default value will be used if no transition time is specified.

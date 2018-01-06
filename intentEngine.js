@@ -1,6 +1,6 @@
 /*
 intentEngine.js
-v1.1.1
+v1.2.0
 David Fink
 @darkroastcreate
 david@darkroastcreative.co
@@ -13,9 +13,11 @@ class IntentEngine {
     // Establish a set of variables for use with the engine
     var intent = this.getIntent();
     var nullIntent = true;
+    var data = {};
     var pages = this.getPages();
     var gotPages = false;
     var hasPages = false;
+    const TRANSITION_TIME = 350;
   }
 
   setIntent(intent) {
@@ -86,7 +88,7 @@ class IntentEngine {
   showIntentContent(transitionTime) {
     // check for the presence of parameters in the function call and act accordingly
     if (transitionTime == null) {
-      transitionTime = 350;
+      transitionTime = TRANSITION_TIME;
     }
 
     // Hide all pages
@@ -101,6 +103,11 @@ class IntentEngine {
     }
     $("#default").show(transitionTime);
 
+  }
+
+  actOnIntent(intent, transitionTime) {
+    setIntent(intent);
+    showIntentContent(transitionTime);
   }
 
 }
