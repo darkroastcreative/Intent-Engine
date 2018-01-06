@@ -1,6 +1,6 @@
 /*
 intentEngine.js
-v1.3.0
+v1.3.1
 David Fink
 @darkroastcreate
 david@darkroastcreative.co
@@ -111,7 +111,7 @@ class IntentEngine {
   showIntentContent(transitionTime) {
     // check for the presence of parameters in the function call and act accordingly
     if (transitionTime == null) {
-      transitionTime = TRANSITION_TIME;
+      transitionTime = this.TRANSITION_TIME;
     }
 
     // Hide all pages
@@ -129,8 +129,8 @@ class IntentEngine {
   }
 
   actOnIntent(intent, transitionTime) {
-    setIntent(intent);
-    showIntentContent(transitionTime);
+    this.setIntent(intent);
+    this.showIntentContent(transitionTime);
   }
 
 }
