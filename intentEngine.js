@@ -46,13 +46,36 @@ class IntentEngine {
     return this.intent;
   }
 
+  setData(data) {
+    this.data = data;
+  }
+
+  getData(key) {
+    if (key == null) {
+      return this.data;
+    }
+    else {
+      return this.data[key];
+    }
+  }
+
+  addData(key, value) {
+    this.data[key] = value;
+  }
+
+  removeData(key) {
+    if (key != null) {
+      this.data[key] = null;
+    }
+  }
+
   getPages() {
 
     // Clear page name array
     var pages = [];
 
     // Detect pages and add their names to the array
-    $.each($(".page"), function(i) {
+    $.each($(".page"), function (i) {
       pages.push($(this).attr("id"));
     });
 
@@ -92,12 +115,12 @@ class IntentEngine {
     }
 
     // Hide all pages
-    $.each($(".page"), function(i) {
+    $.each($(".page"), function (i) {
       $(this).hide();
     });
 
     // Show the content associated with the current intent
-    if(!this.nullIntent && this.hasPage(this.intent)) {
+    if (!this.nullIntent && this.hasPage(this.intent)) {
       $("#" + this.intent).show(transitionTime);
       return;
     }

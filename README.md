@@ -52,6 +52,21 @@ else	{
 ### getIntent()
 `getIntent()` attempts to retrieve the intent of a user by checking for the `intent` query component in a URI, and if there is a value set for this component. The engine's internal `intent` variable will be set to the value (which may be null), and the internal `nullIntent` variable will be set to reflect whether or not the intent is null. In addition, the function will return the detected intent.
 
+### setData(data)
+The `setData()` function allows data to be temporarily stored in Intent Engine. To use this function, data must be passed into the function through the `data` parameter as a JavaScript Object. By calling `setData()`, any existing data stored in Intent Engine will be overwritten.
+
+#### Note
+Currently, data stored in Intent Engine will be lost on refresh or if the user navigates to a new page. Please account for this when storing data within Intent Engine.
+
+### getData(key)
+`getData()` serves a dual purpose, as it can return both the entire set of data stored within the engine, or only return the data associated with a given key. To retreive all data stored in Intent Engine, do not pass in a key through the `key` parameter. To retrieve only data associated with a given key, pass the name of the key in through the `key` parameter as a String.
+
+### addData(key, value)
+To add data to be stored in Intent Engine, use the `addData()` function. This function requires two parameters, `key` and `value`. The `key` parameter must be passed in as a String, and represents the key name for the data. The `value` parameter can be any valid JavaScript data type, and represents the data to be added into Intent Engine.
+
+### removeData(key)
+To remove data from the data storage within Intent Engine, use the `removeData()` function. This function requires a key to be passed in through the `key` parameter as a String. This function will set the data associated with a key to be null, and thus no data that has been removed will be recoverable.
+
 ### getPages()
 For projects utilizing the Intent Engine page structure, the `getPages()` function checks for pages present in a given file, and sets the engine's internal `pages` variable to an array of found pages. If no pages are found, this variable will store an empty array.
 
