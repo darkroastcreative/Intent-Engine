@@ -67,6 +67,9 @@ To add data to be stored in Intent Engine, use the `addData()` function. This fu
 ### removeData(key)
 To remove data from the data storage within Intent Engine, use the `removeData()` function. This function requires a key to be passed in through the `key` parameter as a String. This function will set the data associated with a key to be null, and thus no data that has been removed will be recoverable.
 
+### getPreviousIntent()
+To retrieve the previous intent set within Intent Engine, use the `getPreviousIntent()` function. This function requires no parameters, and will return a string value representing the name of the previous intent.
+
 ### getPages()
 For projects utilizing the Intent Engine page structure, the `getPages()` function checks for pages present in a given file, and sets the engine's internal `pages` variable to an array of found pages. If no pages are found, this variable will store an empty array.
 

@@ -1,6 +1,6 @@
 /*
 intentEngine.js
-v1.3.1
+v1.4.0
 David Fink
 @darkroastcreate
 david@darkroastcreative.co
@@ -14,6 +14,7 @@ class IntentEngine {
     var intent = this.getIntent();
     var nullIntent = true;
     var data = {};
+    var previousIntent = "";
     var pages = this.getPages();
     var gotPages = false;
     var hasPages = false;
@@ -21,6 +22,7 @@ class IntentEngine {
   }
 
   setIntent(intent) {
+    this.previousIntent = this.intent;
     this.intent = intent;
     if (this.intent != null) {
       this.nullIntent = false;
@@ -67,6 +69,10 @@ class IntentEngine {
     if (key != null) {
       this.data[key] = null;
     }
+  }
+
+  getPreviousIntent() {
+    return this.previousIntent;
   }
 
   getPages() {
