@@ -57,7 +57,7 @@ class IntentEngine {
     this.data = data;
   }
 
-  // Get eith all data stored within Intent Engine, or a subset of the data by key
+  // Get all data stored within Intent Engine, or a subset of the data by key
   getData(key) {
     // If a key is not passed into the function call, return the entire data object
     if (key == null) {
